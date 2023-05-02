@@ -45,11 +45,13 @@ class MyAppState extends ChangeNotifier {
   }
 }
 
+// Widget
 class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+// State
 class _MyHomePageState extends State<MyHomePage> {
   var selectedIndex = 0;
 
