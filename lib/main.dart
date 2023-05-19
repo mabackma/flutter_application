@@ -44,6 +44,7 @@ class MyAppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Poistaa sanan listasta.
   void removeFavorite(WordPair pair) {
     favorites.remove(pair);
     notifyListeners();
