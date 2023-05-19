@@ -219,6 +219,7 @@ class FavoritesPage extends StatelessWidget {
         for (var pair in appState.favorites)
           ListTile(
             leading: Icon(Icons.favorite),
+            // Havaitsee jos sanaa painetaan.
             title: GestureDetector(
               onTap: () {
                 appState.removeFavorite(pair);
