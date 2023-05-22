@@ -166,15 +166,16 @@ class GeneratorPage extends StatelessWidget {
                 icon: Icon(icon),
                 label: Text('Like'),
               ),
+              SizedBox(width: 5),
               ElevatedButton.icon(
                 onPressed: () {
                   // Muuttaa sanan järjestyksen.
                   appState.rearrangeWord();
                 },
                 icon: Icon(Icons.compare_arrows_sharp),
-                label: Text('Rearrange'),
+                label: Text('Switch'),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 5),
               ElevatedButton(
                 onPressed: () {
                   appState.getNext();
