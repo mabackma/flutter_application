@@ -1,3 +1,7 @@
+My added features:
+1. Favorites can be removed from favorites view.
+2. The order of the wordpair can be switched.
+
 # flutter_application
 
 A new Flutter project.
