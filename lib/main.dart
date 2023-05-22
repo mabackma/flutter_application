@@ -44,6 +44,29 @@ class MyAppState extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Muuttaa sanan järjestyksen niin, 
+  // että sanan toinen osa tulee ensimmäisenä ja ensimmäinen osa toisena.
+  void rearrangeWord() {
+    var currentWord = current.asCamelCase; 
+
+    for (int i = 0; i < currentWord.length; i++) {
+      if (currentWord[i] == currentWord[i].toUpperCase()) {
+        var firstWord = currentWord[i].toLowerCase();
+        var secondWord = currentWord[0].toUpperCase();
+
+        for (int j = 1; j < i; j++) {
+          secondWord += currentWord[j];
+        }
+        for (int k = i + 1; k < currentWord.length; k++) {
+          firstWord += currentWord[k];
+        }
+
+        current = WordPair(firstWord, secondWord);
+        notifyListeners();
+      }
+    }
+  }
+
   // Poistaa sanan listasta.
   void removeFavorite(WordPair pair) {
     favorites.remove(pair);
@@ -142,6 +165,14 @@ class GeneratorPage extends StatelessWidget {
                 },
                 icon: Icon(icon),
                 label: Text('Like'),
+              ),
+              ElevatedButton.icon(
+                onPressed: () {
+                  // Muuttaa sanan järjestyksen.
+                  appState.rearrangeWord();
+                },
+                icon: Icon(Icons.compare_arrows_sharp),
+                label: Text('Rearrange'),
               ),
               SizedBox(width: 10),
               ElevatedButton(
