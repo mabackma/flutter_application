@@ -2,6 +2,9 @@ My added features:
 1. A favorite wordpair can be removed from favorites view.
 2. The order of the words in wordpair can be switched.
 
+You can download the app from https://github.com/mabackma/flutter_application/blob/master/app-release.apk
+
+
 # flutter_application
 
 A new Flutter project.
